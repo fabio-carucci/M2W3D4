@@ -67,6 +67,23 @@ newClassToHidden ("img", "magicClass");
 // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
 // ogni volta che viene invocata
 
+function changeColorOfPrices () {
+    let myCasualColor = () => {
+        let colors = "0123456789ABCDEF";
+        let myColor = "#";
+        for (let i = 0; i < 6; i++) {
+            myColor += colors[Math.floor(Math.random()*16)];
+        }
+        return myColor;
+    }
+    let myPrices = document.querySelectorAll(".prices");
+    // console.log(myPrices);
+    for (let i = 0; i < myPrices.length; i++) {
+        const element = myPrices[i];
+        element.style.color = myCasualColor();
+    }
+}
 
+changeColorOfPrices();
 
 
